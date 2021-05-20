@@ -114,6 +114,9 @@ spec:
             labels:
               description: "Labels for the cluster"
               type: "object"
+            priorityClassName:
+              description: "priorityClassName"
+              type: "string"
             env:
               description: "Additional environment variables for the cluster"
               items:

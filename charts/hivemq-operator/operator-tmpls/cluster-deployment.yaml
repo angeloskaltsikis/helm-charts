@@ -35,6 +35,8 @@ spec:
         app: "hivemq"
         hivemq-cluster: "{{ spec.name }}"
         hivemq.com/node-offline: "false"
+      annotations:
+        testAnnotation: "{{ spec.customProperties.myCustomProperty }}"
     spec:
       initContainers:
       - name: "init-shared"
@@ -154,6 +156,9 @@ spec:
       {% endif %}
       {% if spec.serviceAccountName != null %}
       serviceAccountName: "{{ spec.serviceAccountName }}"
+      {% endif %}
+      {% if spec.priorityClassName != "" %}
+      priorityClassName: "{{ spec.priorityClassName }}"
       {% endif %}
       securityContext:
         sysctls:

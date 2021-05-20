@@ -101,6 +101,10 @@
           "type": "object",
           "existingJavaType": "java.util.Map<String,String>"
         },
+        "priorityClassName": {
+          "description": "HiveMQ root logger level. Only INFO and above is allowed for now.",
+          "type": "string"
+        },
         "env": {
           "description": "Additional environment variables for the cluster",
           "type": "array",

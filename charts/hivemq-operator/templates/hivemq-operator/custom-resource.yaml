@@ -63,6 +63,11 @@ spec:
   javaOptions: {{ .Values.hivemq.javaOptions }}
   clusterReplicaCount: {{ .Values.hivemq.clusterReplicaCount }}
   controllerTemplate: {{ .Values.hivemq.controllerTemplate }}
+  priorityClassName: "system-cluster-critical"
+  # annotations: {}
+  customProperties:
+    myCustomProperty: "customValue"
+  # nodeSelector: {}
   affinity: |{{ .Values.hivemq.affinity | nindent 4 }}
   listenerConfiguration: |{{ .Values.hivemq.listenerConfiguration | nindent 4 }}
   restApiConfiguration: |{{ .Values.hivemq.restApiConfiguration | nindent 4 }}
